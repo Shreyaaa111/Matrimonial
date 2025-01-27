@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrimonial Dashboard</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 15px 0;
+    }
+    header h1 {
+      font-size: 24px;
+    }
+    header nav ul {
+      list-style: none;
+      display: flex;
+    }
+    header nav ul li {
+      margin-left: 20px;
+    }
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Section */
+    main {
+      padding: 20px;
+    }
+    .welcome {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .profile {
+      margin-bottom: 40px;
+    }
+    .profile-card {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .profile-card img {
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .profile-info p {
+      margin-bottom: 10px;
+    }
+
+    /* Matches Section */
+    .matches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .match-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 15px;
+    }
+    .match-card img {
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .match-card button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .match-card button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #333;
+      color: #fff;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Matrimonial Site</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Matches</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <h2>Welcome, [User Name]!</h2>
+      <p>Find your perfect match today.</p>
+    </section>
+
+    <section class="profile">
+      <h2>Your Profile</h2>
+      <div class="profile-card">
+        <img src="https://via.placeholder.com/150" alt="Profile Picture">
+        <div class="profile-info">
+          <p><strong>Name:</strong> John Doe</p>
+          <p><strong>Age:</strong> 29</p>
+          <p><strong>Profession:</strong> Software Engineer</p>
+          <p><strong>Location:</strong> New York</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="matches">
+      <h2>Potential Matches</h2>
+      <div class="matches-grid">
+        <div class="match-card">
+          <img src="https://via.placeholder.com/150" alt="Match Picture">
+          <h3>Jane Smith</h3>
+          <p>Age: 27 | Location: California</p>
+          <button>View Profile</button>
+        </div>
+        <div class="match-card">
+          <img src="https://via.placeholder.com/150" alt="Match Picture">
+          <h3>Emily Brown</h3>
+          <p>Age: 26 | Location: Texas</p>
+          <button>View Profile</button>
+        </div>
+        <div class="match-card">
+          <img src="https://via.placeholder.com/150" alt="Match Picture">
+          <h3>Sarah Wilson</h3>
+          <p>Age: 28 | Location: Florida</p>
+          <button>View Profile</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Matrimonial Site. All rights reserved.</p>
+  </footer>
+</body>
+</html>
