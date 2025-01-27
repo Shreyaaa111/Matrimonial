@@ -7,15 +7,62 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .hidden { display: none; }
+        body {
+            font-family: Arial, sans-serif;
+            /* background: linear-gradient(to right, #b3b2b1, #abaaa2); */
+            background: linear-gradient(to right, #ffe4e1, #fffacd);
+            /* margin: 0;
+            padding: 0;
+            background: url('wedding3.jpg');
+            background-size: cover;
+            height: 200vh;
+            display: flex;
+            flex-direction: column; */
+        }
+        
+        header {
+    /* background: linear-gradient(to right, #ffe4e1, #fffacd); */
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: left; /* Center items vertically */
+}
+header h1,h4 {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+    text-align: left;
+    /* background-color: #e91e63; */
+}
+
+.logout {
+    background-color: #e91e63;
+    color: #e91e63;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: auto;
+}
+
+.logout {
+    background-color: white;
+}
     </style>
 </head>
 <body class="bg-gray-100">
     <header class="bg-red-600 text-white py-4 shadow-lg">
         <div class="container mx-auto text-center">
             <h1 class="text-3xl font-bold">Find Your Perfect Match</h1>
-            <p class="mt-2 text-lg">Explore profiles of eligible brides and grooms</p>
+            <h4 class="mt-2 text-lg">Explore profiles of eligible brides and grooms</h4>
+            
         </div>
+        <button id="logout" class="logout-btn">Logout</button>
     </header>
+
 
     <main class="container mx-auto py-8">
         <!-- Dropdown Menu -->
@@ -108,6 +155,12 @@
                 }
             });
         });
+
+        function logout() {
+           
+            window.location.href = "matrimonial.html";
+        }
+        document.getElementById("logout").addEventListener("click", logout);
     </script>
 </body>
 </html>
