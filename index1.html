@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimonial Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-red-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">Find Your Perfect Match</h1>
+            <p class="mt-2 text-lg">Explore profiles of eligible brides and grooms</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8">
+        <!-- Dropdown Menu -->
+        <div class="flex justify-center mb-6">
+            <select id="profileFilter" class="bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-700">
+                <option value="all">All Profiles</option>
+                <option value="brides">Brides</option>
+                <option value="grooms">Grooms</option>
+            </select>
+        </div>
+
+        <!-- Profiles Grid -->
+        <div id="profilesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Groom Profile -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 profile-card grooms">
+                <img src="data:image/jpeg;base64,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" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto">
+                <h2 class="text-xl font-semibold text-center mt-4">John Doe</h2>
+                <p class="text-gray-600 text-center">Age: 28 | Height: 5'10"</p>
+                <p class="text-gray-600 text-center">Profession: Software Engineer</p>
+                <p class="text-gray-600 text-center">Location: New York, USA</p>
+                <p class="text-gray-600 mt-4">John is a passionate individual who loves traveling and exploring new cuisines. He values family and tradition.</p>
+                <a href="profile-john.html" class="mt-4 bg-yellow-600 text-white px-4 py-2 rounded-lg w-full block text-center">View Profile</a>
+            </div>
+
+            <!-- Bride Profile -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 profile-card brides">
+                <img src="data:image/jpeg;base64,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" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto">
+                <h2 class="text-xl font-semibold text-center mt-4">Riya</h2>
+                <p class="text-gray-600 text-center">Age: 26 | Height: 5'6"</p>
+                <p class="text-gray-600 text-center">Profession: Doctor</p>
+                <p class="text-gray-600 text-center">Location: London, UK</p>
+                <p class="text-gray-600 mt-4">Jane is a compassionate person who enjoys reading and yoga. She is looking for a partner who shares her love for life.</p>
+                <a href="profile-jane.html" class="mt-4 bg-yellow-600 text-white px-4 py-2 rounded-lg w-full block text-center">View Profile</a>
+            </div>
+
+            <!-- Another Groom Profile -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 profile-card grooms">
+                <img src="data:image/jpeg;base64,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" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto">
+                <h2 class="text-xl font-semibold text-center mt-4">Rahul Verma</h2>
+                <p class="text-gray-600 text-center">Age: 30 | Height: 6'0"</p>
+                <p class="text-gray-600 text-center">Profession: Entrepreneur</p>
+                <p class="text-gray-600 text-center">Location: Mumbai, India</p>
+                <p class="text-gray-600 mt-4">Rahul is a self-made individual who enjoys fitness and innovation. He believes in mutual respect and understanding.</p>
+                <a href="profile-rahul.html" class="mt-4 bg-yellow-600 text-white px-4 py-2 rounded-lg w-full block text-center">View Profile</a>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-6 profile-card grooms">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxINDw4QDg4PEBANDQ8PDw8ODxAODxAPFREWFhUSExUYHiggGBolGxUTITEhJSkvLi4uGB8zOTMsNzQuLisBCgoKDg0NDg0NFjcZFRkrKysrKysrLisrKysrKysrKysrKys4Ky0rKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOgA2QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAAAgEEBQYHAwj/xAA+EAACAQICBgYHBAoDAAAAAAAAAQIDEQQhBRIxQVHRFjJUcZGiImGBobHB4RMUUnIGFTNCU2KCsuLwI4OT/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFhEBAQEAAAAAAAAAAAAAAAAAABES/9oADAMBAAIRAxEAPwDuIAAAAAAAAAAAowgIuGZMAAAABRhhIAkVAAAAAAAISjcmAAAAAFGLgVIqeZIpqgVAAAAACjYCQBFQRqVFFXk0lxeQEgY+rpaC6qcvX1UWeK0lKaslqLfZ3b9oGWq4qEMpTSfDa/BHl+sqX4/LLkYAFGxQx1N7Jr2+j8T3Tvsd+41YnSqyg7xk13Mg2cGJw2lt1Rf1R+aMpCakk4tNPegJEXOxIo43AqAAAAAFGAkASKgAAAAAAAoyoAAADwxmJVKN3m3lFcWYCvWlUd5O79y7i70zUvUS3RivF58iwKAACAAAAAAe+ExUqTus09sdz+p4ADZ6NVTipR2P/bEzD6FrWlKG6Suu9fT4GYIoAABRkJSdz0AAAAAAAAuAAAAAAAABgdLftZd0fgWbL7TC/wCXvjH5liVAAAABcAAAAAAutGO1aH9X9rNgNe0b+1h3v+1mwkUKAqAAAAAAAAAIKOZMAAAAAAAhq5+0mAMNpuPpxfGFvB/Uxxl9NpasHfNNq2+zWfwRiCoAAAR1SQAAAAAALvRUb1Y+pSfut8zPGJ0JD0py4JLxd/kZcigAAAAAAAAAAAAAAAAAAAADC6avrx4amXfd3+RjzNaap3gpfhl7n/qMKVAAAAAAAAAAAXei7/axs3bPW4Wtv9xnzFaEp9eXdFfF/IypFAABFysSIuNyQAAAAAAAKAGVAAAAAA2RvfYB4aQWtSqLhG/hn8jXjaHBNNPY1Z9xrVaNpzS2KUkvYwIAAqABFsCQAAAFUgM5oiFqSf4m377fIvSFGkoRUVsirCUrMipgAAAAABQBcBIqBQqAAAAAAAUauVAAGvaQhq1Z+t6y9uZsJj9MUNaKmtsNv5QMKACoAAAAAB64WGtUguM14XzPIyGhqN5ue6CsvzP6fEDNCwBFAAAKMqAKFQAAAAAAAAAIauftJgAAAAKSV009jVn3BhAaxVjaUlwk14MiemI68/zy+LPMqAAAAAChsuEoqnCMVwu3xe81tm0oiqgAAAyiAqAAAAAAAAAAAAAAAAUbDFgFioIzmopt5JK7A1vE9ef55fFnmSnLWbfFt+LIlQAAAAAGbSjVjZcLVU4Rkt6V+/eiK9SjYYSAIqAAAAAi5WJEXG4EgAAAAAAACjI62ftJsACyxGkoQyXpv+XZ4mNxGkJz36q4Ry94GXxGMhT60s/wrNmIxuOlVy6seHHvLQFQBFyJAAAAAAAuMJi5Unlmnti9n0ZbgDYMNjoVN+q+EsvDiXRqpcYfGzp7JXX4ZZr6EVsQLDD6UhLKfoPxj4l9GSaundPes0BUAAAAAAAAAACjds3klvZZ4vSMaeUfSlwWxd7MRiMTKp1nlwWSXsAymJ0pGOUFrPjsj9TF4jFTqdaWXBZR8DxBUAAAAAAAAAAAAAAAAAAAPWjXlT6smvVufsPIAZfDaWTyqK38yzXhuMjCakrppp71mjVz0o15U3eMmvg+9EVswMfhdKRllP0Xx/dfIyAAAAUnJRTbdks22YLGY9zbULxjx3y5I9dL4nWlqLZHb65fQxwAAFQAAAAAAAAAAAi45kgAAAAAACLRIAAAAAAAu8HjpUrJ+lDhw7i0AGz0qqmlKLumTMBo3E/ZzSfVm7P1PczPkVq9SWtKT4tvxZE4XH9LtINpLG1m20kkoXbexbDL1sRpuFr1qrdryUKuGm6b+2lSSnZ+i3KLtu9d1JLWWa66Dk2Lnpulr3xEpxpqTnUp18LKnBRnKMnKWVknFtt7E1ex5YjF6apJOdepd1fstRVcNKpGo3FKDit7c1ltyle1mIV14HGMfprSmHhSnVxklGvCUqco1aFRSUZuEtVx61mlnG6s1nwsemGP7bV8nIuSu6g4V0wx/bavk5Dphj+21fJyGSu6g4V0wx/bavk5Dphj+21fJyGSu6axU4V0vx/bavk5Dphj+21fJyGSu6g4V0wx/bavk5Dphj+21fJyGSu6g4V0wx/bavk5Dphj+21fJyGSu6g4V0wx/bavk5Dphj+21fJyGSu6g4V0wx/bavk5Dphj+21fJyGSu6g4V0wx/bavk5Dphj+21fJyGSu6g4V0wx/bavk5F+9L6Xtf7xXta99ag1a18+BMldmBxWWn9KJ6rxVZPV1ra1Hq3tcr+vNK5L7zWzt+9R37BkrtJkf1jLifPdT9LNIRdpYysmrZf8e9XW71kemGP7bV8nIZKwkXZprandGTf6Q4tuT+81LzhGnLq21IuTjFK1kk5StbZfIA2iNXT+KnGUJYmpKM1JST1XdS1tbdv15343D09inNVPvFTXipKElqxcFKEYSULL0U4wgsrbO8ADwxukq2IUY1qspxg5OEXZRhrO71Ul6KfBcEWgAAAAAAAAAAAAAAAAAAAAAAAPSm6aXpU5SeeaqKK9WWqyoAn9pS/gy/9f8AEo50v4Ul/wBv+IAHlNpt6q1VuTetb27yIAH/2Q==" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto">
+                <h2 class="text-xl font-semibold text-center mt-4">Raj Verma</h2>
+                <p class="text-gray-600 text-center">Age: 30 | Height: 6'0"</p>
+                <p class="text-gray-600 text-center">Profession: Entrepreneur</p>
+                <p class="text-gray-600 text-center">Location: Mumbai, India</p>
+                <p class="text-gray-600 mt-4">Rahul is a self-made individual who enjoys fitness and innovation. He believes in mutual respect and understanding.</p>
+                <a href="profile-rahul.html" class="mt-4 bg-yellow-600 text-white px-4 py-2 rounded-lg w-full block text-center">View Profile</a>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-6 profile-card brides">
+                <img src="data:image/jpeg;base64,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" alt="Profile Picture" class="w-32 h-32 rounded-full mx-auto">
+                <h2 class="text-xl font-semibold text-center mt-4">Anusha H</h2>
+                <p class="text-gray-600 text-center">Age: 26 | Height: 5'6"</p>
+                <p class="text-gray-600 text-center">Profession: Doctor</p>
+                <p class="text-gray-600 text-center">Location: London, UK</p>
+                <p class="text-gray-600 mt-4">Jane is a compassionate person who enjoys reading and yoga. She is looking for a partner who shares her love for life.</p>
+                <a href="profile-jane.html" class="mt-4 bg-yellow-600 text-white px-4 py-2 rounded-lg w-full block text-center">View Profile</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-red-600 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Matrimonial Website. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to filter profiles
+        const profileFilter = document.getElementById('profileFilter');
+        const profileCards = document.querySelectorAll('.profile-card');
+
+        profileFilter.addEventListener('change', (event) => {
+            const filterValue = event.target.value;
+
+            profileCards.forEach((card) => {
+                if (filterValue === 'all') {
+                    card.classList.remove('hidden');
+                } else if (!card.classList.contains(filterValue)) {
+                    card.classList.add('hidden');
+                } else {
+                    card.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
