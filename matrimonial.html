@@ -1,182 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrimonial Dashboard</title>
-  <style>
-    /* General Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f7f7f7;
-      color: #333;
-    }
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalyan Matrimony</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffe4e1, #fffacd);
+            margin: 0;
+            padding: 0;
+            background: url('wedding3.jpg');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* header {
+            background: linear-gradient(to right, #ffe4e1, #fffacd);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center; 
+            gap: 15px; 
+        } */
+        header {
+    background: linear-gradient(to right, #ffe4e1, #fffacd);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: center; /* Center items vertically */
+}
+        /* header img {
+            width: 40px; 
+            height: 40px;
+            border-radius: 50%; 
+        } */
+    .logo-title {
+    display: flex;
+    align-items: center; /* Align logo and title vertically */
+    gap: 15px; /* Space between logo and title */
+}
 
-    /* Header */
-    header {
-      background-color: #007bff;
-      color: #fff;
-      padding: 15px 0;
-    }
-    header h1 {
-      font-size: 24px;
-    }
-    header nav ul {
-      list-style: none;
-      display: flex;
-    }
-    header nav ul li {
-      margin-left: 20px;
-    }
-    header nav ul li a {
-      color: #fff;
-      text-decoration: none;
-    }
-    header nav ul li a:hover {
-      text-decoration: underline;
-    }
+header img {
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%; 
+}
+header h1 {
+    color: #e91e63;
+    font-size: 2rem;
+    margin: 0;
+    text-align: left;
+}
 
-    /* Main Section */
-    main {
-      padding: 20px;
-    }
-    .welcome {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .profile {
-      margin-bottom: 40px;
-    }
-    .profile-card {
-      display: flex;
-      align-items: center;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .profile-card img {
-      border-radius: 50%;
-      margin-right: 20px;
-    }
-    .profile-info p {
-      margin-bottom: 10px;
-    }
+.logout-btn {
+    background-color: #e91e63;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
 
-    /* Matches Section */
-    .matches-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .match-card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      padding: 15px;
-    }
-    .match-card img {
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-    .match-card button {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .match-card button:hover {
-      background-color: #0056b3;
-    }
+.logout-btn:hover {
+    background-color: #d81b60;
+}
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 10px;
-      background: #333;
-      color: #fff;
-      margin-top: 20px;
-    }
-  </style>
+
+        header h1 {
+            color: #e91e63;
+            font-size: 2rem;
+            margin: 0 auto; /* Centers the text within the header */
+            text-align: center;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .nav-buttons button:hover {
+            background-color: #d81b60;
+        }
+        main {
+            width: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+        }
+        h2 {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            /* width: 1200px; */
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, select {
+    width: 100%;  /* Make all inputs and select boxes take full width */
+    padding: 10px;
+    /* margin: 10px 0; */
+    box-sizing: border-box;  /* Ensure padding doesn't affect width */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+        #SearchButton
+        {
+            width: 300px;
+            height: 30px;
+        }
+        button {
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            cursor: pointer;
+            
+        }
+        button:hover {
+            background-color: #d81b60;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center; /* Align checkbox and label in the same line */
+            gap: 10px; /* Space between checkbox and label */
+        }
+
+        .checkbox-container label {
+            line-height: 1;
+            white-space: nowrap; /* Prevent label text from wrapping to the next line */
+        }
+        
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Matrimonial Site</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Matches</a></li>
-          <li><a href="#">Logout</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="welcome">
-      <h2>Welcome, [User Name]!</h2>
-      <p>Find your perfect match today.</p>
-    </section>
-
-    <section class="profile">
-      <h2>Your Profile</h2>
-      <div class="profile-card">
-        <img src="https://via.placeholder.com/150" alt="Profile Picture">
-        <div class="profile-info">
-          <p><strong>Name:</strong> John Doe</p>
-          <p><strong>Age:</strong> 29</p>
-          <p><strong>Profession:</strong> Software Engineer</p>
-          <p><strong>Location:</strong> New York</p>
+    <header>
+        <div class="logo-title">
+            <img src="logo.jpg" alt="Logo"> <!-- Add the logo here -->
+            <h1>Kalyan Matrimony</h1>
         </div>
-      </div>
-    </section>
+        <button id="logoutButton" class="logout-btn">Logout</button>
+    </header>
+    
+    
+    <main>
+        <div class="form-container">
+            <h2>Find Your Perfect Match</h2>
+            <form>
+                <div>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div>
+                    <input type="text" id="phno" placeholder="Enter your phone number">
+                </div>
+                <div>
+                    <select id="gender">
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="profile">
+                        <option value="" disabled selected>Profile Created For</option>
+                        <option value="Myself">Myself</option>
+                        <option value="Son">Son</option>
+                        <option value="Daughter">Daughter</option>
+                        <option value="Sister">Sister</option>
+                        <option value="Brother">Brother</option>
+                        <option value="Relative">Relative</option>
+                        <option value="Friend">Friend</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="language">
+                        <option value="" disabled selected>Mother Tongue</option>
+                        <option value="Kannada">Kannada</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="English">English</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="Telugu">Telugu</option>
+                        <option value="Malayalam">Malayalam</option>
+                        <option value="Marathi">Marathi</option>
+                        <option value="Gujarati">Gujarati</option>
+                        <option value="Punjabi">Punjabi</option>
+                        <option value="Bengali">Bengali</option>
+                        <option value="Odia">Odia</option>
+                        <option value="Assamese">Assamese</option>
+                        <option value="Urdu">Urdu</option>
+                        <option value="Sindhi">Sindhi</option>
+                        <option value="Konkani">Konkani</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="religion" onchange="updateCasteOptions()">
+                        <option value="" disabled selected>Religion</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Muslim">Muslim</option>
+                        <option value="Christian">Christian</option>
+                        <option value="Sikh">Sikh</option>
+                        <option value="Buddhist">Buddhist</option>
+                        <option value="Jain">Jain</option>
+                        <option value="Parsi">Parsi</option>
+                        <option value="Jewish">Jewish</option>
+                        <option value="Bahá'í">Bahá'í</option>
+                        <option value="Zoroastrian">Zoroastrian</option>
+                        <option value="Spiritual">Spiritual but not religious</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="caste">
+                        <option value="" disabled selected>Select Caste</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <div>
+                    <input type="password" id="pass" placeholder="Enter your password">
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I accept the <a href="#" onclick="showTerms()">Terms and Conditions</a>.
+                    </label>
+                </div>
 
-    <section class="matches">
-      <h2>Potential Matches</h2>
-      <div class="matches-grid">
-        <div class="match-card">
-          <img src="https://via.placeholder.com/150" alt="Match Picture">
-          <h3>Jane Smith</h3>
-          <p>Age: 27 | Location: California</p>
-          <button>View Profile</button>
+                <button type="button" id="SearchButton" onclick="searchMatches()">Search</button>
+            </form>
         </div>
-        <div class="match-card">
-          <img src="https://via.placeholder.com/150" alt="Match Picture">
-          <h3>Emily Brown</h3>
-          <p>Age: 26 | Location: Texas</p>
-          <button>View Profile</button>
+        <div id="termsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1000;">
+            <div style="background: white; padding: 20px; margin: 50px auto; max-width: 500px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <h4>Terms and Conditions</h4>
+                <p>
+                    These are the terms and conditions. By using this website, you agree to comply with the rules and regulations outlined here.
+                </p>
+                <button onclick="hideTerms()" style="background: #e91e63; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Close</button>
+            </div>
         </div>
-        <div class="match-card">
-          <img src="https://via.placeholder.com/150" alt="Match Picture">
-          <h3>Sarah Wilson</h3>
-          <p>Age: 28 | Location: Florida</p>
-          <button>View Profile</button>
-        </div>
-      </div>
-    </section>
-  </main>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> Kalyan Matrimony. All Rights Reserved.</p>
+    </footer>
+    <script src="matrimonialjs.js">
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-  <footer>
-    <p>&copy; 2025 Matrimonial Site. All rights reserved.</p>
-  </footer>
+        // Handle Sign In/Logout Toggle
+        const signInButton = document.getElementById('signInButton');
+        const logoutButton = document.getElementById('logoutButton');
+
+        signInButton.addEventListener('click', () => {
+            signInButton.classList.add('hidden');
+            logoutButton.classList.remove('hidden');
+            alert('Signed In');
+        });
+
+        logoutButton.addEventListener('click', () => {
+            signInButton.classList.remove('hidden');
+            logoutButton.classList.add('hidden');
+            alert('Logged Out');
+        });
+
+        function searchMatches() {
+    window.location.href = "index1.html"; // Directly provide the URL
+    alert('Searching for matches!');
+}
+
+    </script>
 </body>
 </html>
